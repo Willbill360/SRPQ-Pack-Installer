@@ -2,12 +2,79 @@
   <html>
     <head>
       <meta charset="UTF-8">
-      <title>Hello World!</title>
+      <title>Launcher SRPQ</title>
+      <link rel="stylesheet" href="./assets/css/style.css">
+      <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Yanone+Kaffeesatz" rel="stylesheet">
+      <script>window.$ = window.jQuery = require('jquery');</script>
     </head>
     <body>
-      <h1>Hello World!</h1>
-      Nous utilisons Node <script>document.write(process.versions.node)</script>,
-      Chrome <script>document.write(process.versions.chrome)</script>,
-      et Electron <script>document.write(process.versions.electron)</script>.
+      
+
+      <div class="bg center">
+        <div class="_content">
+          <!-- Le menu avec - + x -->
+          <div id="container">
+            <nav>
+              <div id="titleShown"><img id="icone" src="./images/srpq_officiel_transp_B2N_icon.ico" alt="icon"><span class="title"></span></div>
+              <div id="buttons">
+                <div class="wrap">
+                  <div id="setting"><img class="svg" src="./images/cog.svg" alt="setting"></div>
+                  <div id="minimize"><img class="svg" src="./images/minus.svg" alt="minus"></div>
+                  <div id="maximize"><img class="svg" src="./images/window-maximize.svg" alt="maximize"></div>
+                  <div id="close"><img class="svg" src="./images/times.svg" alt="close"></div>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Le boutton pour lancer les updates et etc... -->
+          <div class="launcherButton">
+            <input type="button" value="Rejoindre l'aventure !" />
+          </div>
+  
+          <!-- La progress bar -->
+          <div class="pg-container">
+            <p class="pg-preview-txt">Label outside of the progress bar:</p>
+  
+            <div class="pg-background">
+              <div id="myBar" class="pg-green" style="width:0%"></div>
+            </div>
+  
+            <p id="myP">Added <span id="demo">0</span> of 10 photos</p>
+          </div>
+        </div>
+        
+        <script src="./assets/js/functionnalities.js"></script>
+        <script type="text/javascript">
+          $('.launcherButton').click(function()  {
+            $(this).fadeOut('slow', function() {
+              $('.pg-container').fadeIn('slow', function(){
+                checkConfig();
+              });
+            });
+          });
+
+          function move() {
+            var elem = document.getElementById("myBar");   
+            var width = 0;
+            var id = setInterval(frame, 50);
+            function frame() {
+              if (width >= 100) {
+                clearInterval(id);
+                document.getElementById("myP").className = "w3-text-green w3-animate-opacity";
+                document.getElementById("myP").innerHTML = "Successfully uploaded 10 photos!";
+              } else {
+                width++; 
+                elem.style.width = width + '%'; 
+                var num = width * 1 / 10;
+                num = num.toFixed(0)
+                document.getElementById("demo").innerHTML = num;
+              }
+            }
+          }
+
+          
+        </script>
+      </div>
     </body>
   </html>
