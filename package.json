@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Willbill360/SRPQ-Pack-Installer.git"
+    "url": "git+https://gitlab.com/squaretymedia/SRPQ-Launcher.git"
   },
   "keywords": [
     "pack"
@@ -17,10 +17,13 @@
   "author": "Willbill360",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Willbill360/SRPQ-Pack-Installer/issues"
+    "url": "https://gitlab.com/squaretymedia/SRPQ-Launcher/issues"
   },
-  "homepage": "https://github.com/Willbill360/SRPQ-Pack-Installer#readme",
+  "homepage": "https://gitlab.com/squaretymedia/SRPQ-Launcher#readme",
   "devDependencies": {
     "electron": "^2.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }
